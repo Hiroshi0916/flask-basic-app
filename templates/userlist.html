@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Flask Page {% endblock%}
+{% block content%}    
+
+<ul>
+    {#
+    <h1>The firstest man is {{users|first}}</h1>
+    <h1>The last man is {{users|last}}</h1>
+    <h2>The sorted first man is {{users|sort|first}}</h2>
+    <h2>The sorted first man is {{users|random}}</h2>
+
+    {% for user in users | reverse%}
+   
+    #}
+    {% for user in users%}
+    <!-- <li>{{user| reverse_name}}</li> -->
+    <li>{{user.name}} {{user.age}} boan at {{user.age|born_year}}</li>
+    {% endfor %}
+</ul>
+
+{% if is_login %}
+<p>Already Log in</p>
+{% else %}
+<p>Not yet Log in</p>
+{% endif %}
+{% if 'Taro' in users %}
+<h2>Taro and Jiro exist here</h2>
+{% endif %}
+
+
+{% endblock%}
